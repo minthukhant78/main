@@ -1,26 +1,51 @@
 import React, { useState } from "react";
 
 const ShowMyName = () => {
-    const [name, setName] = useState()
+  const [name, setName] = useState(" ");
   const handlMin = () => {
-    console.log("Min");
+    setName();
+    setName(name + "Min");
   };
 
   const handlThu = () => {
-    console.log("Thu");
+    setName(name + "Thu");
   };
 
-
   const handlKhant = () => {
-    console.log("Min");
+    setName(name + "Khant");
+  };
+
+  const handlClear = () => {
+    setName("");
   };
   return (
     <div className=" p-10">
       {" "}
-      <h1 className=" text-3xl font-bold">My Name is Show</h1>
-      <button onClick={handlMin} className=" border px-4 py-2 bg-black text-white">Min</button>
-      <button onClick={handlThu}   className=" border px-4 py-2 bg-black text-white">Thu</button>
-      <button onClick={handlKhant}   className=" border px-4 py-2 bg-black text-white">Khant</button>
+      <h1 className=" text-4xl font-bold mb-4">My Name is "{name}"</h1>
+      <button
+        onClick={handlMin}
+        className=" border px-4 py-2 bg-black text-white"
+      >
+        Min
+      </button>
+      <button
+        onClick={handlThu}
+        className=" border px-4 py-2 bg-black text-white"
+      >
+        Thu
+      </button>
+      <button
+        onClick={handlKhant}
+        className=" border px-4 py-2 bg-black text-white"
+      >
+        Khant
+      </button>
+      <button
+        onClick={handlClear}
+        className=" border px-4 py-2 border-black "
+      >
+        Clear Name
+      </button>
     </div>
   );
 };
